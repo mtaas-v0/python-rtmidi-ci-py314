@@ -15,11 +15,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.14' 
+
       - name: Build wheels
-        uses: pypa/cibuildwheel@v2.21.0
+        uses: pypa/cibuildwheel@v3.0  # Upgrade this version tag
         env:
-          CIBW_BUILD: "cp314-*"  # Limits builds to CPython 3.14
-          CIBW_ENABLE: "cpython-prerelease" # Enables beta/RC Python 3.14
+          CIBW_BUILD: "cp314-*"
+          CIBW_ENABLE: "cpython-prerelease"
 
       - uses: actions/upload-artifact@v4
         with:
