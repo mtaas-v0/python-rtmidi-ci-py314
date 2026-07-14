@@ -19,6 +19,8 @@ jobs:
         uses: pypa/cibuildwheel@v2.21.0
         env:
           CIBW_BUILD: "cp314-*"  # Limits builds to CPython 3.14
+          CIBW_ENABLE: "cpython-prerelease" # Enables beta/RC Python 3.14
+
       - uses: actions/upload-artifact@v4
         with:
           path: ./wheelhouse/*.whl
