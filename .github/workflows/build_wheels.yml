@@ -12,6 +12,12 @@ jobs:
     #ubuntu-latest, macos-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+         submodules: true
+
+      - uses: ilammy/msvc-dev-cmd@v1
+        if: matrix.os == 'windows-latest'
+      
       - uses: actions/setup-python@v5
         with:
           python-version: '3.14' 
